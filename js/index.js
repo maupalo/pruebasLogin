@@ -83,6 +83,7 @@ facebook.addEventListener("click", function(){
     }).catch((error) => {
       // Handle Errors here.
       const errorCode = error.code;
+      alert(error.code)
       const errorMessage = error.message;
       // The email of the user's account used.
       const email = error.customData.email;
