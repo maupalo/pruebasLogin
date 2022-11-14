@@ -78,6 +78,7 @@ facebook.addEventListener("click", function(){
       // The signed-in user info.
       const user = result.user;
       // ...
+      alert("Inició sesión")
     }).catch((error) => {
       // Handle Errors here.
       const errorCode = error.code;
