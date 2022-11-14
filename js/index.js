@@ -72,12 +72,13 @@ google.addEventListener("click", function(){
 facebook.addEventListener("click", function(){
     signInWithPopup(auth, providerFB)
     .then((result) => {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      // The signed-in user info.
+// The signed-in user info.
       const user = result.user;
-      // ...
+
+      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+      const credential = FacebookAuthProvider.credentialFromResult(result);
+      const accessToken = credential.accessToken;
+
       alert("Inició sesión")
     }).catch((error) => {
       // Handle Errors here.
@@ -86,7 +87,7 @@ facebook.addEventListener("click", function(){
       // The email of the user's account used.
       const email = error.customData.email;
       // The AuthCredential type that was used.
-      const credential = GoogleAuthProvider.credentialFromError(error);
+      const credential = FacebookAuthProvider.credentialFromError(error);
       // ...
     });
 });
